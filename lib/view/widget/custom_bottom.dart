@@ -14,7 +14,7 @@ class CustomBottom extends StatelessWidget {
     return GetBuilder<HomeController>(builder: (controller) {
       return Container(
         height: 60.h,
-        margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(50).r,

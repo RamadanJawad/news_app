@@ -1,9 +1,8 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 import 'package:news_app/model/news.dart';
-import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:news_app/view/screen/bottom/business_screen.dart';
 import 'package:news_app/view/screen/bottom/health_screen.dart';
 import 'package:news_app/view/screen/bottom/sport_screen.dart';
@@ -12,7 +11,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class HomeController extends GetxController {
   List<News> data = [];
-  var currentIndex = 0;
+  var currentIndex = 3;
 
   changeIndex(int index) {
     currentIndex = index;
@@ -52,5 +51,6 @@ class HomeController extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
   }
 }
